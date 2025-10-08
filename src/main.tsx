@@ -1,17 +1,11 @@
 // src/main.tsx
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router";
-import App from "./App.tsx";
-import { GameProvider } from "./context/gameContext.tsx"; // make sure path matches
-import "./index.css";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css"; // Tailwind/global styles
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <BrowserRouter>
-      <GameProvider>
-        <App />
-      </GameProvider>
-    </BrowserRouter>
-  </StrictMode>
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
